@@ -44,24 +44,29 @@
 							<div class="text-center">
 								<h1 class="h4 text-gray-900 mb-4">Cadastrar</h1>
 							</div>
-							<form class="user">
+							<!-- action apontando para salvar usuário  e method post -->
+							<form method="post" class="user"
+								action="<c:url value="dashboard/salvausuario"/>">
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
-										<input type="text" class="form-control form-control-user"
+									<!-- name = "usuario" -> para receber o usuario -->
+										<input name="usuario.nome" type="text" class="form-control form-control-user"
 											id="exampleFirstName" placeholder="Nome">
 									</div>
 									<div class="col-sm-6">
-										<input type="text" class="form-control form-control-user"
+										<input name="usuario.sobrenome" type="text" class="form-control form-control-user"
 											id="exampleLastName" placeholder="Sobrenome">
 									</div>
 								</div>
 								<div class="form-group">
-									<input type="email" class="form-control form-control-user"
+								<!-- name = "email" -> para receber o email -->
+									<input name="usuario.email" type="email" class="form-control form-control-user"
 										id="exampleInputEmail" placeholder="Email">
 								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
-										<input type="password" class="form-control form-control-user"
+									<!-- name = "senha" -> para receber a senha -->
+										<input name="usuario.senha" type="password" class="form-control form-control-user"
 											id="exampleInputPassword" placeholder="Senha">
 									</div>
 									<div class="col-sm-6">
@@ -70,8 +75,9 @@
 									</div>
 								</div>
 								<!-- Navegação entre telas utilizando taglib jstl -->
-								<a href="<c:url value="dashboard"/>"
-									class="btn btn-primary btn-user btn-block"> Cadastrar </a>
+								<!-- Button com type submit para enviar formulario para dashboard/salvausuario -->
+								<button type="submit"
+									class="btn btn-primary btn-user btn-block"> Cadastrar </button>
 
 							</form>
 
